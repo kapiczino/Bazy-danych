@@ -1,0 +1,12 @@
+Zadanie 1.
+CREATE TABLE postac (id_postaci INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, nazwa VARCHAR(40),rodzaj ENUM ('wiking','ptak','kobieta'),data_ur DATE,wiek INTEGER UNSIGNED);
+INSERT INTO postac VALUES (1, "Bjorn", "wiking", '2000-10-27', 22);
+INSERT INTO postac VALUES (2, "Drozd", "ptak", '2021-10-27', 1);
+INSERT INTO postac VALUES (3, "Teściowa", "kobieta", '1982-10-27', 40);
+UPDATE postac SET wiek=88 WHERE nazwa="Teciowa"
+
+Zadanie 2.
+CREATE TABLE walizka (id_walizki INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, pojemnosc INTEGER UNSIGNED, kolor ENUM ("rozowy", "teczowy", "zolty", "czerwony", id_wlasciciela INTEGER FOREIGN KEY (id_wlasciciela) references postac(id));
+ALTER TABLE walizka ALTER kolor SET default "rozowy");
+
+
