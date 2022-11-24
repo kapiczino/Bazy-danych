@@ -45,3 +45,5 @@ ALTER TABLE statek DROP FOREIGN KEY fk_StatekPostac;
 Zadanie 2.
 ALTER TABLE postac ADD pesel VARCHAR(11);
 UPDATE postac SET pesel AS PRIMARY KEY
+ALTER TABLE postac UPDATE rodzaj ADD 'syrenka';
+INSERT INTO postac VALUES (9,'Gertruda Nieszczera','syrenka', '1000-01-01', 1022);
