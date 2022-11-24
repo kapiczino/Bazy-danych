@@ -1,3 +1,5 @@
+LEKCJA 1.
+
 Zadanie 1.
 CREATE TABLE postac (id_postaci INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT, nazwa VARCHAR(40),rodzaj ENUM ('wiking','ptak','kobieta'),data_ur DATE,wiek INTEGER UNSIGNED);
 INSERT INTO postac VALUES ('1', "Bjorn", "wiking", '2000-10-27', 22);
@@ -31,4 +33,15 @@ INSERT INTO statek VALUES ('2137', 'towarowy', '2022-07-08', 30000);
 INSERT INTO statek VALUES ('0069', 'pasazerski', '2022-08-15', 15000);
 ALTER TABLE postac ADD COLUMN funkcja VARCHAR(50) DEFAULT 'pasazer';
 UPDATE postac SET funkcja='kapitan' WHERE id_postaci=1;
-FOREIGN KEY(id_postaci) REFERENCES statek(nazwa_statku);
+ALTER TABLE statek ADD CONSTANT fk_StatekPostac FOREIGN KEY (id_postaci) REFERENCES postac(id_postaci);
+DROP TABLE izba
+
+LEKCJA 2.
+
+Zadanie 1.
+DELETE FROM postac WHERE wiek BETWEEN 100 AND 60;
+ALTER TABLE statek DROP FOREIGN KEY fk_StatekPostac;
+
+Zadanie 2.
+ALTER TABLE postac ADD pesel VARCHAR(11);
+UPDATE postac SET pesel AS PRIMARY KEY
